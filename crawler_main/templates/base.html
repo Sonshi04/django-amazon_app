@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet", href='{% static "main.css" %}'>
+    </head>
+    <body>
+        {% include "_navbar.html" %}
+        {% block main %}
+        コンテンツがありません
+        {% endblock %}
+        {% include "_fooder.html" %}
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>アマゾンをクロールするだけのアプリ</h1>
+<h2>アマゾンの商品を,価格の範囲を自由に決めて検索できるよ</h2>
+{% for ex in exlist %}
+<li>{{ex}}</li>
+{% endfor %}
+<p>などなど...</p>
+
+{% endblock %}
