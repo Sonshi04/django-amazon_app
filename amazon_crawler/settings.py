@@ -24,6 +24,7 @@ if not DEBUG:
 	ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 	STATIC_ROOT = '/usr/share/nginx/html/static'
 	MEDIA_ROOT = '/usr/share/nginx/html/media'
+	MEDIA_URL = '/media/'
 
 # Application definition
 
@@ -81,6 +82,10 @@ DATABASES = {
         'PASSWORD': env('DB_PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'sql_mode': 'TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY',
+        },		
     }
 }
 
@@ -123,7 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
