@@ -1,4 +1,4 @@
-#れどめというよりは自分の開発メモ
+#れどめというよりは自分の勉強メモ
 - html
 - django {% タグ名 %}でpythonをhtmlにかける 
 - extends, block, forとか...
