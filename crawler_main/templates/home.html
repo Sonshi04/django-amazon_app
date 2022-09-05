@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 {% block main %}
 <h1>アマゾンをクロールするだけのアプリ</h1>
-<h4>アマゾンの商品を,価格の範囲を自由に決めて検索できるよ</h4>
+<h5>アマゾンの商品から価格の範囲を自由に決めて検索できるよ</h5>
+<br>
 <div class='content'>
     <form method='POST'>
     {% csrf_token %}
-    <p>キーワード: <input type="text" name='keywords',initial=''></p>
+    <p>キーワード: <input type="text" name='keywords',initial=''> (スペース区切り)</p>
     <p>価格下限： <input type="text" name='min_price',initial=0></p>
     <p>価格上限： <input type="text" name='max_price',initial=1000></p>
-    <p>表示件数： <input type="text" name='product_num',initial=25></p>
-    <input type="submit" value="取得">
+    <select name="product_num" id="pref">
+        <option value="" selected>表示件数を選択</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="75">75</option>
+        <option value="100">100</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="検索!">
     </form>
 </div>
 {% endblock %}
