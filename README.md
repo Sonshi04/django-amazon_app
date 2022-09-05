@@ -10,3 +10,6 @@
 - パスワード等は.envに保存
 デプロイ参考サイト
 https://view-s.co.jp/product/webapp/socket/
+
+gunicornでデプロイできなくて焦ったこと
+django-amazon...serviceでsocketではなくsockとしていたことでno such fileとなっていた

@@ -10,7 +10,7 @@ import urllib.parse
 import base64
 from PIL import Image
 from io import BytesIO
-import urllib.request
+
 # Create your views here.
 class AboutView(TemplateView):
   template_name = 'about.html'
