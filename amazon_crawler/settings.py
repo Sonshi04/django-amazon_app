@@ -19,8 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = False
-if not DEBUG:
+DEBUG = True
+if DEBUG:
+    MEDIA_URL = '/media/'
+else:
 	ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 	STATIC_ROOT = '/usr/share/nginx/html/static'
 	MEDIA_ROOT = '/usr/share/nginx/html/media'
@@ -55,7 +57,6 @@ ROOT_URLCONF = 'amazon_crawler.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

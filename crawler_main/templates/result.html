@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>アマゾンをクロールするだけのアプリ</h1>
+<h4>アマゾンの商品を,価格の範囲を自由に決めて検索できるよ</h4>
+<div class="container">
+<p>検索結果:{{ keyword }}, 価格範囲:{{ min }}〜{{ max }}円</p>
+<ul class="list-group list-group-flush">
+ <table border="4">
+   <tr>
+        <th style="width: 150px;">画像</th>
+        <th style="width: 100px;">価格</th>
+        <th style="width: 500px;">タイトル</th>
+   </tr>
+   {% for product in products %} 
+    <tr>
+        <td class="table-img">
+            <img src="data:image/png;base64,{{ product.2 }}" width="30%" height="30%"/>
+        </td>
+        <td>
+            {{product.3}}円
+        </td>
+        <td>
+             <a href="{{ product.0 }}">{{ product.1 }}</a>
+        </td>
+    </tr>
+   {% endfor %}
+ </table>
+</ul>
+</div>
+{% endblock %}
