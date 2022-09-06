@@ -20,13 +20,13 @@
         <tr>
             {% for product in products %} 
             <tr>
-                <td width="300">
-                    <img src="data:image/png;base64,{{ product.2 }}" width="70%" height="70%"/>
+                <td width="40%">
+                    <img src="data:image/png;base64,{{ product.2 }}" width="50%" height="50%"/>
                 </td>
-                <td align="center" class="price" width="100">
+                <td align="center" class="price" width="20%">
                     {{product.3|add:"0" }}
                 </td>
-                <td >
+                <td width="30%">
                     <a href="{{ product.0 }}">{{ product.1 }}</a>
                 </td>
             </tr>
