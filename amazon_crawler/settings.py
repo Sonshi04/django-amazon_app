@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 if DEBUG:
     MEDIA_URL = '/media/'
     ALLOWED_HOSTS = ['127.0.0.1','192.168.1.8']

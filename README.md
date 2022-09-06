@@ -13,3 +13,5 @@ https://view-s.co.jp/product/webapp/socket/
 
 gunicornでデプロイできなくて焦ったこと
 django-amazon...serviceでsocketではなくsockとしていたことでno such fileとなっていた
+
+nginxのエイリアス指定でstaticをする時は''つけない!
