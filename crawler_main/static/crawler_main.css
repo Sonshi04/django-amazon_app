@@ -19,13 +19,13 @@ table {
     border-top-color: gray;
 }
 td:nth-child(1) {
-    width: 180px;
+    width: 200px;
 }
 td:nth-child(2) {
     width: 100px;
 }
 td:nth-child(3) {
-    width: 150px;
+    width: 200px;
 }
 
 /* _::-webkit-full-page-media, _:future, :root img {

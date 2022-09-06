@@ -19,10 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 if DEBUG:
     MEDIA_URL = '/media/'
-    ALLOWED_HOSTS = ['192.168.1.30','192.168.1.8','192.168.1.2']
+    ALLOWED_HOSTS = ['127.0.0.1','192.168.1.8']
 else:
 	ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 	STATIC_ROOT = '/usr/share/nginx/html/static'
@@ -49,8 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	#whitenoise無効化
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'amazon_crawler.urls'
@@ -132,16 +130,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#!!!本番環境は消すかも!!!
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#whitenoise無効化
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
