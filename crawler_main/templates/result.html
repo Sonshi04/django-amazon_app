@@ -2,28 +2,52 @@
 {% load static %}
 {% block main %}
 <h1>アマゾンをクロールするだけのアプリ</h1>
-<h5>アマゾンの商品から価格の範囲を自由に決めて検索できるよ</h5>
+<h5>アマゾンの商品から価格の範囲を自由に決めてキーワード検索できるよ</h5>
 <br>
 <p>検索ワード: {{ keyword }}, 価格範囲: {{ min }}〜{{ max }}円</p>
-<button onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(2)')">価格で並び替え<i class="fa fa-sort"></i></button>
-<table class="sorttbl" id="myTable" border="3">
-    <tr>
-        <th style="width: 150px;">画像</th>
-        <th style="width: 80px;">価格(円)</th>
-        <th style="width: 500px;">タイトル</th>
-    </tr>
-    {% for product in products %} 
-        <tr class="item">
-            <td>
-                <img src="data:image/png;base64,{{ product.2 }}" width="70%" height="70%"/>
-            </td>
-            <td align="center">
-                {{product.3}}
-            </td>
-            <td>
-                <a href="{{ product.0 }}">{{ product.1 }}</a>
-            </td>
+<div id="users">
+<button class="sort" data-sort="price">価格で並べ替え</button>
+    <table border="3">
+      <thead>
+        <tr>
+          <th>画像</th> <!-- ここ変更点-->
+          <th>価格（円）</th> <!-- ここ変更点-->
+          <th>タイトル</th> 
         </tr>
-    {% endfor %}
-</table>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        <tr>
+            {% for product in products %} 
+            <tr>
+                <td>
+                    <img src="data:image/png;base64,{{ product.2 }}" width="70%" height="70%"/>
+                </td>
+                <td align="center" class="price">
+                    {{product.3|add:"0" }}
+                </td>
+                <td >
+                    <a href="{{ product.0 }}">{{ product.1 }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script>
+  var options = {
+    valueNames: [ "price" ]
+  };
+  var userList = new List('users', options);
+</script>
+<style>
+    .sort.desc:after {
+      content:"▼";
+    }
+    .sort.asc:after {
+      content:"▲";
+    }
+</style>
 {% endblock %}
