@@ -7,6 +7,7 @@
 <p>検索ワード: {{ keyword }}, 価格範囲: {{ min }}〜{{ max }}円</p>
 <div id="users">
 <button class="sort" data-sort="price">価格で並べ替え</button>
+
     <table border="3">
       <thead>
         <tr>
@@ -20,20 +21,19 @@
         <tr>
             {% for product in products %} 
             <tr>
-                <td width="40%">
+                <td>
                     <img src="data:image/png;base64,{{ product.2 }}" width="50%" height="50%"/>
                 </td>
-                <td align="center" class="price" width="20%">
+                <td align="center" class="price">
                     {{product.3|add:"0" }}
                 </td>
-                <td width="30%">
+                <td>
                     <a href="{{ product.0 }}">{{ product.1 }}</a>
                 </td>
             </tr>
         {% endfor %}
       </tbody>
     </table>
-  
   </div>
   <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   <script>
@@ -42,12 +42,4 @@
   };
   var userList = new List('users', options);
 </script>
-<style>
-    .sort.desc:after {
-      content:"▼";
-    }
-    .sort.asc:after {
-      content:"▲";
-    }
-</style>
 {% endblock %}

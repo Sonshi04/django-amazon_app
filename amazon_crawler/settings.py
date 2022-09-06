@@ -19,10 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = False 
+DEBUG = False
 if DEBUG:
     MEDIA_URL = '/media/'
-    ALLOWED_HOSTS = ['192.168.1.30']
+    ALLOWED_HOSTS = ['192.168.1.30','192.168.1.8','192.168.1.2']
 else:
 	ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 	STATIC_ROOT = '/usr/share/nginx/html/static'

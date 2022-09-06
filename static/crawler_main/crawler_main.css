@@ -1,8 +1,34 @@
-.fa-sort {
-  color: #fff;
-  background-color: #eb6100;
+
+.sort.desc:after {
+    content:"▼";
+  }
+  .sort.asc:after {
+    content:"▲";
+  }
+  img {
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-.fa-sort:hover {
-  color: #fff;
-  background: #f56500;
+table {
+    display: table;
+    border-collapse: separate;
+    -webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-top-color: gray;
 }
+td:nth-child(1) {
+    width: 180px;
+}
+td:nth-child(2) {
+    width: 100px;
+}
+td:nth-child(3) {
+    width: 150px;
+}
+
+/* _::-webkit-full-page-media, _:future, :root img {
+    top: 15px;
+    text-align: center;
+} */
