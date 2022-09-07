@@ -1,4 +1,4 @@
-#アマゾン価格クローラー
+#djangoで作ったアマゾン価格クローラー
 - メインフォルダはamazon_crawler
 - アプリフォルダはcrawler_main
 - 実行環境
