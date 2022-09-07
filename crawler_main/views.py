@@ -86,6 +86,6 @@ def crawl(request):
         "keyword": keywords,
         "min": min_price,
         "max": max_price,
-        "product_num": len(product),
+        "product_num": len(products),
     }   
     return render(request, "result.html", ctxt)
