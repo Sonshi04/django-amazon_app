@@ -25,8 +25,8 @@ if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1','192.168.1.8']
 else:
 	ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-	STATIC_ROOT = '/usr/share/nginx/html/static'
-	MEDIA_ROOT = '/usr/share/nginx/html/media'
+	STATIC_ROOT = '/usr/share/nginx/html/static/'
+	MEDIA_ROOT = '/usr/share/nginx/html/media/'
 	MEDIA_URL = '/media/'
 
 # Application definition
