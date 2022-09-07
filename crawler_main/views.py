@@ -12,9 +12,6 @@ from PIL import Image
 from io import BytesIO
 
 # Create your views here.
-class AboutView(TemplateView):
-    template_name = "about.html"
-
 
 class HomeView(CreateView):
     template_name = "home.html"
@@ -87,5 +84,6 @@ def crawl(request):
         "keyword": keywords,
         "min": min_price,
         "max": max_price,
+        "product_num": len(product),
     }   
     return render(request, "result.html", ctxt)
