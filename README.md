@@ -1,4 +1,5 @@
-#djangoで作ったアマゾン価格クローラー
+#djangoで作ったAmazonで商品検索するだけのアプリ
+価格を1円単位で指定可
 - メインフォルダはamazon_crawler
 - アプリフォルダはcrawler_main
 - 実行環境
